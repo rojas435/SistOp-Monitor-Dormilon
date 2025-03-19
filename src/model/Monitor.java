@@ -3,16 +3,19 @@ package model;
 import java.util.concurrent.Semaphore;
 
 public class Monitor implements Runnable {
+    // Atributos de la clase
     Semaphore availableChairs;
     Semaphore sleepyMonitor;   // Controla si el monitor está dormido o despierto
     Semaphore monitorAttention;
 
+    // Constructor de la clase
     public Monitor(int sillasPasillo) {
         this.availableChairs = new Semaphore(sillasPasillo);
         this.sleepyMonitor = new Semaphore(0); 
         this.monitorAttention = new Semaphore(1);
     }
 
+    // Método que simula la atención del monitor a los estudiantes
     @Override
     public void run() {
         while (true) {
@@ -43,20 +46,24 @@ public class Monitor implements Runnable {
         }
     }
 
+    // Método que despierta al monitor
     public void wakeUpMonitor() {
         if (sleepyMonitor.availablePermits() == 0) {
             sleepyMonitor.release(); 
         }
     }
 
+    // Getters
     public Semaphore getAvailableChairs() {
         return availableChairs;
     }
 
+    // Getters
     public Semaphore getSleepyMonitor() {
         return sleepyMonitor;
     }
 
+    // Getters
     public Semaphore getMonitorAttention() {
         return monitorAttention;
     }

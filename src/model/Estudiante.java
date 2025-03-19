@@ -4,18 +4,22 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Estudiante implements Runnable {
     
+    // Constantes de la clase
     private static final int TIEMPO_ATENCION_ESTUDIANTE = 3000; // Tiempo que tarda el monitor en ayudar
 
+    // Atributos de la clase
     private final int idEstudiante;
     private final Monitor monitor;
     private boolean atendido;
 
+    // Constructor de la clase
     public Estudiante(int idEstudiante, Monitor monitor) {
         this.idEstudiante = idEstudiante;
         this.monitor = monitor;
         this.atendido = false;
     }
 
+    // Método que simula la llegada del estudiante a la monitoría
     @Override
     public void run() {
         do {
@@ -45,6 +49,7 @@ public class Estudiante implements Runnable {
         } while (!atendido);
     }
 
+    // Método que simula la atención del monitor al estudiante
     private void atencionEstudiante() throws InterruptedException {
         if (monitor.getSleepyMonitor().availablePermits() == 0) { // Si el monitor esta mimido
             System.out.println(String.format("Estudiante %d: Despertando al monitor...", idEstudiante));
