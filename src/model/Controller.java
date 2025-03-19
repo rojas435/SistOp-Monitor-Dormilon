@@ -3,11 +3,8 @@ package model;
 public class Controller {
     private final Monitor monitor;
     private final int numEstudiantes;
-    private final int numSillasCorredor;
-
     public Controller(int numEstudiantes, int numSillasCorredor) {
         this.numEstudiantes = numEstudiantes;
-        this.numSillasCorredor = numSillasCorredor;
         this.monitor = new Monitor(numSillasCorredor);
     }
 
