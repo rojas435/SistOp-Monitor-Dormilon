@@ -74,11 +74,6 @@ Para ejecutar este proyecto, necesitas:
 5. Si no hay estudiantes esperando, el monitor se duerme.
 6. La simulación finaliza cuando todos los estudiantes han sido atendidos.
 
-## Posibles Mejoras
-
-- Implementar una lógica para detener la simulación después de atender un número determinado de estudiantes.
-- Optimizar la gestión de los hilos para reducir el consumo de CPU.
-
 ## Conclusión
 
 Este programa proporciona una implementación básica pero efectiva del problema del "Monitor Dormilón" utilizando sincronización con semáforos en Java. Es un excelente ejemplo de cómo manejar concurrencia en sistemas multihilo.
